@@ -1,9 +1,14 @@
 package com.bridgelabz;
 
 public class MoodAnalyzer {
-    // creating method named moodCheck having string return type and passing parameter of string type
+   String message;
 
-    public String moodCheck(String message){
+   // creating constructor
+    public MoodAnalyzer(String message) {
+        this.message = message;
+    }
+
+    public String moodCheck(){
         if(message.contains("SAD")){
             System.out.println("In sad mood");
             return "SAD";
