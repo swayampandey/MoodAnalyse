@@ -12,18 +12,24 @@ public class MoodAnalyzer {
     creating method to check mood by passing string type message parameter
     try and catch blocks will be used for exception handling
      */
-    public String moodCheck(){
+    public String moodCheck() throws MoodAnalysisException {
         try {
             if (message.contains("SAD"))
             {
                 return "SAD";
+            }
+            else if (message.contains("HAPPY")){
+                return "HAPPY";
+            }
+            else if(message.contains("")){
+                throw new MoodAnalysisException(NullMoodErrors.EMPTYMOOD,"Invalid Mood ! ");
             }
             else{
                 return "HAPPY";
             }
         }
         catch(Exception exception){
-            return "HAPPY";
+            throw new MoodAnalysisException(NullMoodErrors.NULLMOOD,"Please enter mood ! ");
         }
     }
 
